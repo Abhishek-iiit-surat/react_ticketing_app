@@ -25,3 +25,7 @@ a {
 #tasklist::-webkit-scrollbar{
 display: none;
 }
+
+#taskItems::-webkit-scrollbar{
+  display: none;
+  }
