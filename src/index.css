@@ -25,3 +25,15 @@ a {
 #tasklist::-webkit-scrollbar{
 display: none;
 }
+
+#taskItems::-webkit-scrollbar{
+  display: none;
+  }
+
+#popup-description::-webkit-scrollbar{
+  display:none
+}
+
+#popup-main::-webkit-scrollbar{
+  display:none
+}
