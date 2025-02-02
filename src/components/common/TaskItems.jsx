@@ -1,7 +1,6 @@
 import React from 'react'
 
 function TaskItems({data,setTaskFilter}) {
-    console.log("Data Coming to TaskItems is: ", data)
     return (
         <div id='taskItems' className='flex mt-10 justify-between gap-5 overflow-x-auto'>
             <div className='rounded-xl w-[45%] py-6 px-9 bg-red-400' onClick={() => setTaskFilter("newtask")} >

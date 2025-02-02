@@ -7,7 +7,6 @@ import EmployeeDashboard from './components/Dashboard/EmployeeDashboard';
 import AdminDashboard from './components/Dashboard/AdminDashboard';
 import { setLocalStorage, getLocalStorage } from './utils/localStorage';
 import { AuthContext } from './context/AuthProvider';
-import Popup from './components/Tasklist/Popup'
 
 function App() {
   const authData = useContext(AuthContext);

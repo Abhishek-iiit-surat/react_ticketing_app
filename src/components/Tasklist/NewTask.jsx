@@ -1,9 +1,13 @@
 import React from 'react'
 
-function NewTask({ tasks, color, getRandomColor,setSelectedTask }) {
+function NewTask({ tasks, color, getRandomColor,setSelectedTask,setTaskPopupflag }) {
+    const clickhandler = (task) => {
+        setTaskPopupflag(true);
+        setSelectedTask(task); 
+    };
     return (
         tasks.filter(task => task.newTask).length > 0 ? tasks.map((task, index) => (
-            <div className={`flex-shrink-0 h-full w-[300px] ${getRandomColor(color)} rounded-xl`} key={index} onClick={() => setSelectedTask(task.id)} >
+            <div className={`flex-shrink-0 h-full w-[300px] ${getRandomColor(color)} rounded-xl`} key={index} onClick={() => clickhandler(task)} >
                 <div className='flex jsutify-between gap-[50%] items-center px-8 py-2'>
                     <h3 className='bg-red-600 text-small px-3 py-1 rounded'>{task.priority}</h3>
                     <h4 className='text-base'>{task.date}</h4>

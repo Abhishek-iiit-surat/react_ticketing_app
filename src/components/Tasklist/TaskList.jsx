@@ -5,8 +5,7 @@ import FailedTask from './FailedTask'
 import NewTask from './NewTask'
 import AllTask from './AllTask'
 
-function TaskList({ data, taskFilter,setSelectedTask }) {
-    console.log("data Coming to tasklist component is: ", data)
+function TaskList({ data, taskFilter,setSelectedTask,setTaskPopupflag }) {
     var tasks = data.tasks
     const colors = [
         'bg-red-400',
@@ -53,12 +52,12 @@ function TaskList({ data, taskFilter,setSelectedTask }) {
     return (
         <div id='tasklist' className='mt-10 h-[55%] overflow-x-auto flex items-center justify-flex-start gap-5'>
             {taskFilter === "alltask" && (
-                <AllTask tasks={tasks} colors={colors} getRandomColor={getRandomColor}></AllTask>
+                <AllTask tasks={tasks} colors={colors} getRandomColor={getRandomColor} setSelectedTask={setSelectedTask} setTaskPopupflag={setTaskPopupflag}></AllTask>
             )}
-            {taskFilter === "activetask" && <ActiveTask tasks={tasks} color={colors} getRandomColor={getRandomColor} setSelectedTask={setSelectedTask}></ActiveTask>}
-            {taskFilter === "newtask" && <NewTask tasks={tasks} color={colors} getRandomColor={getRandomColor} setSelectedTask={setSelectedTask}></NewTask>}
-            {taskFilter === "completedtask" && <CompleteTask tasks={tasks} color={colors} getRandomColor={getRandomColor} setSelectedTask={setSelectedTask}></CompleteTask>}
-            {taskFilter === "failedtask" && <FailedTask tasks={tasks} color={colors} getRandomColor={getRandomColor} setSelectedTask={setSelectedTask}></FailedTask>}
+            {taskFilter === "activetask" && <ActiveTask tasks={tasks} color={colors} getRandomColor={getRandomColor} setSelectedTask={setSelectedTask} setTaskPopupflag={setTaskPopupflag}></ActiveTask>}
+            {taskFilter === "newtask" && <NewTask tasks={tasks} color={colors} getRandomColor={getRandomColor} setSelectedTask={setSelectedTask} setTaskPopupflag={setTaskPopupflag}></NewTask>}
+            {taskFilter === "completedtask" && <CompleteTask tasks={tasks} color={colors} getRandomColor={getRandomColor} setSelectedTask={setSelectedTask} setTaskPopupflag={setTaskPopupflag}></CompleteTask>}
+            {taskFilter === "failedtask" && <FailedTask tasks={tasks} color={colors} getRandomColor={getRandomColor} setSelectedTask={setSelectedTask} setTaskPopupflag={setTaskPopupflag}></FailedTask>}
         </div>
     )
 }

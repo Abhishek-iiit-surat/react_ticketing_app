@@ -333,6 +333,7 @@ const employees = [
     tasks: [
       {
         id:22,
+        state:"active",
         title: "Policy Review",
         description: "Update and finalize HR policies for 2025.",
         date: "2025-01-25",
@@ -450,6 +451,5 @@ export function setLocalStorage() {
 export function getLocalStorage() {
   let employees = JSON.parse(localStorage.getItem("employees"))
   let admin = JSON.parse(localStorage.getItem("admin"))
-  console.log(typeof (employees))
   return { employees, admin }
 }
