@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ActiveTask({ tasks, color, getRandomColor,setSelectedTask,setTaskPopupflag }) {
+function ActiveTask({ tasks, setSelectedTask,setTaskPopupflag }) {
 
     // var tasks = data\
     const clickhandler = (task) => {
@@ -9,21 +9,30 @@ function ActiveTask({ tasks, color, getRandomColor,setSelectedTask,setTaskPopupf
     };
 
     return (
-        tasks.filter(task => task.active).length > 0 ? tasks.map((task, index) => (
-            <div className={`flex-shrink-0 h-full w-[300px] ${getRandomColor(color)} rounded-xl`} key={index} onClick={() => clickhandler(task)} >
-                <div className='flex jsutify-between gap-[50%] items-center px-8 py-2'>
-                    <h3 className='bg-red-600 text-small px-3 py-1 rounded'>{task.priority}</h3>
-                    <h4 className='text-base'>{task.date}</h4>
+        tasks.filter(task => task.active).length > 0 ? (
+            tasks.map((task, index) => (
+                <div
+                    className="flex-shrink-0 h-full w-[300px] bg-white shadow-md hover:shadow-lg transition duration-500 border border-gray-300 hover:border-blue-400 border-2 outline-none rounded-xl p-6"
+                    key={index}
+                    onClick={() => clickhandler(task)}
+                >
+                    <div className="flex justify-between items-center">
+                        <h3 className="bg-red-600 text-white text-xs px-3 py-1 rounded-md font-semibold">
+                            {task.priority}
+                        </h3>
+                        <h4 className="text-gray-500 text-sm">{task.date}</h4>
+                    </div>
+
+                    <h2 className="mt-4 text-xl font-semibold text-gray-600">{task.title}</h2>
+                    <p className="mt-2 text-sm text-gray-600">{task.description}</p>
                 </div>
-                <h2 className='mt-5 text-2xl font-semibold px-10'>{task.title}</h2>
-                <p className='mt-2 px-10 text-sm'>{task.description}</p>
+            ))
+        ) : (
+            <div className="h-[30%] w-full flex items-center justify-center text-black text-3xl mt-5">
+                <h1>You have no active tasks</h1>
             </div>
-        )):(
-            <div className="h-[30%] w-[50%] flex item-center justify-center text-center text-white-500 text-5xl mt-5">
-                <h1 >No active task.</h1>
-            </div>
-            
         )
+
     )
 }
 
