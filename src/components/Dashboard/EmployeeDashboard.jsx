@@ -16,7 +16,7 @@ function EmployeeDashboard({ data }) {
     }
 
     return taskPopupflag ? (
-        <div className='p-10 bg-[#1c1c1c] h-screen w-screen'>
+        <div className='p-10 bg-gradient-to-br from-gray-100 to-blue-300 h-screen w-screen'>
             <Header data={data} />
             <TaskItems data={data} setTaskFilter={setTaskFilter} />
             <TaskList
@@ -39,7 +39,7 @@ function EmployeeDashboard({ data }) {
 
 
     ) : (
-        <div className='p-10 bg-[#1c1c1c] h-screen w-screen'>
+        <div className='p-10 bg-gradient-to-br from-gray-100 to-blue-300 h-screen w-screen'>
             {/* <h1>{data.name}</h1> */}
             <Header data={data} />
             <TaskItems data={data} setTaskFilter={setTaskFilter} />
